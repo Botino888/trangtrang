@@ -1,0 +1,81 @@
+﻿@model List<SelectListItem>
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Mylayout.cshtml";
+}
+<div class="content">
+
+    <div class="module">
+        <div class="module-head">
+            <h3>Tạo danh mục</h3>
+        </div>
+        <div class="module-body">
+
+
+
+            <form class="form-horizontal row-fluid" method="post">
+                <div class="control-group">
+                    <label class="control-label" for="basicinput">Mã sản phẩm</label>
+                    <div class="controls">
+                        <input type="text" id="basicinput" placeholder="Mã sản phẩm" class="span8" name="MaSP" >
+
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="basicinput">Tên sản phẩm</label>
+                    <div class="controls">
+                        <input type="text" id="Text1" placeholder="Tên sản phẩm..." class="span8" name="TenSP" >
+
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="basicinput">Ảnh</label>
+                    <div class="controls">
+
+                        <input type="file" id="Text1" placeholder="Hình ảnh..." class="span8" name="UrlAnh" >
+
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="basicinput">Gía sản phẩm</label>
+                    <div class="controls">
+                        <input type="text" id="Text1" placeholder="Gía sản phẩm..." class="span8" name="GiaSP" >
+
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="basicinput">Mô tả</label>
+                    <div class="controls">
+                        <input type="text" id="Text1" placeholder="Mô tả sản phẩm..." class="span8" name="MoTa" >
+
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="basicinput">Danh Mục</label>
+                    <div class="controls">
+                        <select name="MaDM">
+                            
+                            @foreach (SelectListItem it in Model)
+                            {
+                                <option value="@it.Value">@it.Text</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="controls">
+                        <button type="submit" class="btn">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="module-head">
+            <h3></h3>
+        </div>
+    </div>
+
+
+
+</div>
+

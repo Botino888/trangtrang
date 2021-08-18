@@ -1,0 +1,61 @@
+﻿@using demo.Models.ModelsView;
+@model List<SanPhamView1>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Mylayout.cshtml";
+}
+<div class="content">
+
+    <div class="module">
+        <div class="module-head">
+            <h3>Tables</h3>
+        </div>
+        <div class="module-body">
+            <table class="table table-striped table-bordered table-condensed" id="Table-test">
+                <thead>
+                    <tr>
+
+                        <th>Mã sản phẩm</th>
+                        <th>Tên sản phẩm</th>
+                        <th>Gía sản phẩm</th>
+                        <th>Mã danh mục</th>
+                        <th>Tên danh mục</th>
+                        <th colspan="3">Chức năng</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (SanPhamView1 it in Model)
+                    {
+                    <tr>
+
+                        <td>@it.MaSP</td>
+                        <td>@it.TenSP</td>
+                        <td>@it.GiaSP</td>
+                        <td>@it.MaDM</td>
+                        <td>@it.DanhMuc</td>
+                        <td><a href="/SanPham/Sua/@it.MaSP">Sửa</a></td>
+                        <td><a href="/SanPham/Delete/@it.MaSP">Xóa</a></td>
+                    </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="module-head">
+            <h3>
+                Trang
+            </h3>
+        </div>
+    </div>
+
+
+
+    <br />
+
+</div>
+
+
+
+
